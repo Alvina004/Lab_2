@@ -34,7 +34,69 @@ int main() {
         }
     }
 
-    cout << "Vercanvac baryd: " << decryptedWord << endl;
+    cout << "Vercanvac bary: " << decryptedWord << endl;
 
     return 0;
 }
+//The same code with class.
+/*
+
+#include <iostream>
+using namespace std;
+
+class EncDec 
+{
+private: 
+    string originalAlphabet;
+    string substitutionAlphabet;
+
+public:
+    EncDec() {
+        originalAlphabet = "abcdefghijklmnopqrstuvwxyz";
+        substitutionAlphabet = "qwertyuioplkjhgfdsazxcvbnm";  
+    }
+
+    string encrypt(const string& word) {
+        string encryptedWord = "";
+        for (int i = 0; i < word.length(); ++i) {
+            for (int j = 0; j < 26; ++j) {
+                if (word[i] == originalAlphabet[j]) {
+                    encryptedWord += substitutionAlphabet[j];
+                    break;
+                }
+            }
+        }
+        return encryptedWord;
+    }
+
+    string decrypt(const string& encryptedWord) {
+        string decryptedWord = "";
+        for (int i = 0; i < encryptedWord.length(); ++i) {
+            for (int j = 0; j < 26; ++j) {
+                if (encryptedWord[i] == substitutionAlphabet[j]) {
+                    decryptedWord += originalAlphabet[j];
+                    break;
+                }
+            }
+        }
+        return decryptedWord;
+    }
+};
+
+int main() {
+    EncDec encdec; 
+    string word;
+
+    cout << "Mutqagreq bar gaghtnagrman hamar: ";
+    cin >> word;
+
+    string encryptedWord = encdec.encrypt(word);
+    cout << "Gaghtnagrvac bary: " << encryptedWord << endl;
+
+     string decryptedWord = encdec.decrypt(encryptedWord);
+    cout << "Vercanvac bary: " << decryptedWord << endl;
+
+    return 0;
+}  
+
+*/
